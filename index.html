@@ -74,7 +74,6 @@
             <h4>Select Ship by:</h4>
             <div class="btn-1">
               <label for="Genre">Genre</label>
-  
               <select name="Genre" id="Genre">
                 <option value="StarTrek">StarTrek</option>
                 <option value="StarWars">StarWars</option>
@@ -82,45 +81,31 @@
             </div>
   
             <div class="btn-2">
-              <button type="button" class="btn btn-lg btn-secondary">Class</button>
-              <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                <span class="visually-hidden">Toggle Dropdown</span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Corrvette</a></li>
-                <li><a class="dropdown-item" href="#">Destroyer</a></li>
-                <li><a class="dropdown-item" href="#">Cruiser</a></li>
-                <li><a class="dropdown-item" href="#">Frigate</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Battle Craft</a></li>
-                <li><a class="dropdown-item" href="#">Support Craft</a></li>
-              </ul>
+              <label for="Class">Class</label>
+              <select name="Class" id="Class">
+                <option value="Corrvette">Corrvette</option>
+                <option value="Frigate">Frigate</option>
+                <option value="Destroyer">Destroyer</option>
+                <option value="Cruiser">Cruiser</option>
+                <option value="Battle-Craft">Battle Craft</option>
+                <option value="Support-Craft">Support Craft</option>
+              </select>
             </div>
   
             <div class="btn-3">
-              <button type="button" class="btn btn-lg btn-secondary">Size</button>
-              <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                <span class="visually-hidden">Toggle Dropdown</span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Smallest</a></li>
-                <li><a class="dropdown-item" href="#">Largest</a></li>
-              </ul>
+              <label for="Size">Size</label>
+              <select name="Size" id="Size">
+                <option value="Smallest">Smallest</option>
+                <option value="Largest">Largest</option>
+              </select>
             </div>
   
             <div class="btn-4">
-              <button type="button" class="btn btn-lg btn-secondary">Speed</button>
-              <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split"
-                data-bs-toggle="dropdown" aria-expanded="false"> <span class="visually-hidden">Toggle Dropdown</span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Fastest</a></li>
-                <li><a class="dropdown-item" href="#">Slowest</a></li>
-              </ul>
+              <label for="Speed">Speed</label>
+              <select name="Speed" id="Speed">
+                <option value="Fastest">Fastest</option>
+                <option value="Slowest">Slowest</option>
+              </select>
             </div>
             <button id="submit">Submit</button>
           </div>

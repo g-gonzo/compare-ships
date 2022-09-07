@@ -44,7 +44,7 @@ h4 {
     font-size: large;
 }
 
-/*Middle Container (Tiles Holder)*/
+/*Middle Container (Tile Holder)*/
 #middle-box {
     display: flex;
     flex-direction: row;
@@ -100,7 +100,28 @@ h4 {
 .btn-2,
 .btn-3,
 .btn-4 {
-    margin: 5px;
+    margin: 15px;
+    
+    }
+    
+    #Genre {
+        width: 100%;
+    }
+    
+    #Class {
+        width: 100%;
+    }
+    
+    #Size {
+        width: 100%;
+    }
+    
+    #Speed {
+        width: 100%;
+    }
+    
+    #submit {
+        margin: 10px;
 }
 
 /*Display Results*/
