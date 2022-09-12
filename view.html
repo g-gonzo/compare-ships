@@ -77,59 +77,66 @@
                         <!-- Example split secondary button -->
                         <h4>Select Ship by:</h4>
                         <div class="btn-1">
-                            <button type="button" class="btn btn-lg btn-secondary">Genre</button>
+                            <button type="button" class="btn btn-lg btn-secondary" id="btn-1">Select ship by
+                                Genre?</button>
                             <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <span class="visually-hidden">Toggle Dropdown</span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">StarTrek</a></li>
-                                <li><a class="dropdown-item" href="#">StarWars</a></li>
+                                <li><a class="dropdown-item" onclick="SelectStarTrek()" href="#">StarTrek</a></li>
+                                <li><a class="dropdown-item" onclick="SelectStarWars()" href="#">StarWars</a></li>
                             </ul>
                         </div>
 
                         <div class="btn-2">
-                            <button type="button" class="btn btn-lg btn-secondary">Class</button>
+                            <button type="button" class="btn btn-lg btn-secondary" id="btn-2">Select ship by
+                                Class?</button>
                             <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <span class="visually-hidden">Toggle Dropdown</span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Corrvette</a></li>
-                                <li><a class="dropdown-item" href="#">Destroyer</a></li>
-                                <li><a class="dropdown-item" href="#">Cruiser</a></li>
-                                <li><a class="dropdown-item" href="#">Frigate</a></li>
+                                <li><a class="dropdown-item" onclick="SelectCorrvette()" href="#">Corrvette</a></li>
+                                <li><a class="dropdown-item" onclick="SelectDestroyer()" href="#">Destroyer</a></li>
+                                <li><a class="dropdown-item" onclick="SelectCruiser()" href="#">Cruiser</a></li>
+                                <li><a class="dropdown-item" onclick="SelectFrigate()" href="#">Frigate</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Battle Craft</a></li>
-                                <li><a class="dropdown-item" href="#">Support Craft</a></li>
+                                <li><a class="dropdown-item" onclick="SelectBattleCraft()" href="#">Battle Craft</a>
+                                </li>
+                                <li><a class="dropdown-item" onclick="SelectSupportCraft()" href="#">Support Craft</a>
+                                </li>
                             </ul>
                         </div>
 
                         <div class="btn-3">
-                            <button type="button" class="btn btn-lg btn-secondary">Size</button>
+                            <button type="button" class="btn btn-lg btn-secondary" id="btn-3">Select ship by
+                                Size?</button>
                             <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <span class="visually-hidden">Toggle Dropdown</span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Smallest</a></li>
-                                <li><a class="dropdown-item" href="#">Largest</a></li>
+                                <li><a class="dropdown-item" onclick="SelectSmallShips()" href="#">Smallest</a></li>
+                                <li><a class="dropdown-item" onclick="SelectLargeShips()" href="#">Largest</a></li>
                             </ul>
                         </div>
 
                         <div class="btn-4">
-                            <button type="button" class="btn btn-lg btn-secondary">Speed</button>
+                            <button type="button" class="btn btn-lg btn-secondary" id="btn-4">Select ship by
+                                Speed?</button>
                             <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split"
                                 data-bs-toggle="dropdown" aria-expanded="false"> <span class="visually-hidden">Toggle
                                     Dropdown</span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Fastest</a></li>
-                                <li><a class="dropdown-item" href="#">Slowest</a></li>
+                                <li><a class="dropdown-item" onclick="SelectFastShips()" href="#">Fastest</a></li>
+                                <li><a class="dropdown-item" onclick="SelectSlowShips()" href="#">Slowest</a></li>
                             </ul>
                         </div>
+                        <button type="submit" class="v2Submit" id="submit2">Submit</button>
                     </div>
                 </div>
 
