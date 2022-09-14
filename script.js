@@ -10,6 +10,9 @@ let btn2 = document.getElementById("btn-2");
 let btn3 = document.getElementById("btn-3");
 let btn4 = document.getElementById("btn-4");
 
+// Attempt at creating a list of ships with JSON Obj
+//const obj = JSON.parse(Ships);
+
 // Button Listeners
 v1Submit.addEventListener('click', function () {
     SearchForShips();
@@ -17,6 +20,14 @@ v1Submit.addEventListener('click', function () {
 
 btn1.addEventListener('click', function () {
     console.log("Button 1 has been clicked");
+
+    let data = fetch('./db.json')
+        .then(results => results.json())
+        .then(console.log);
+
+    let ship1 = data.ship1[5];
+    console.log(ship1);
+
 });
 
 btn2.addEventListener('click', function () {
@@ -31,15 +42,7 @@ btn4.addEventListener('click', function () {
     console.log("Button 4 has been clicked");
 });
 
-// Attempt at creating a list of ships with JSON Obj
-var listOfShips = results;
-
-for (const item in Ships) {
-    results = item.add
-}
-
 function SearchForShips() {
-    //let results = [];
     fetch('./db.json')
         .then(results => results.json())
         .then(console.log);
