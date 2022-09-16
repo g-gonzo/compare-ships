@@ -90,7 +90,7 @@
                 <span class="visually-hidden">Toggle Dropdown</span>
               </button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" onclick="SelectCorrvette()" href="#">Corrvette</a></li>
+                <li><a class="dropdown-item" onclick="SelectCorvette()" href="#">Corvette</a></li>
                 <li><a class="dropdown-item" onclick="SelectDestroyer()" href="#">Destroyer</a></li>
                 <li><a class="dropdown-item" onclick="SelectCruiser()" href="#">Cruiser</a></li>
                 <li><a class="dropdown-item" onclick="SelectFrigate()" href="#">Frigate</a></li>
@@ -131,14 +131,19 @@
 
         <div class="flexbox-item flexbox-item-7">
           <div class="results-display" id="results-data">
-            <p class="search-links">
-            <h6>blah, blah, da, da</h6>
-            <h6>blah, blah, da, da</h6>
-            <h6>blah, blah, da, da</h6>
-            <h6>blah, blah, da, da</h6>
-            <h6>blah, blah, da, da</h6>
-            <h6>blah, blah, da, da</h6>
-            </p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Id#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Model</th>
+                  <th scope="col">Genre</th>
+                </tr>
+              </thead>
+              <tbody id="data-output">
+                <!--JavaScript will fill this part-->
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
