@@ -24,16 +24,29 @@ btn1.addEventListener('click', function () {
         })
         .then(function (Ships) {
             let out = "";
-            let ship1 = Ships[15];
+            let weight = swt[ship.Displacement];
             for (let ship of Ships) {
 
             }
-            console.log(ship1);
+
         })
 });
 
 btn2.addEventListener('click', function () {
     console.log("Button 2 has been clicked");
+    fetch("Ships.json")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (Ships) {
+            let out = "";
+            let ship1 = Ships[15];
+            for (let ship of Ships) {
+
+
+            }
+            console.log(ship1);
+        })
 });
 
 btn3.addEventListener('click', function () {

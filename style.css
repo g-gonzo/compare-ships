@@ -13,14 +13,18 @@ body {
     background-color: rgb(226, 228, 230);
 }
 
-.flexbox-item-1 {
+.flexbox-item-vo1,
+.flexbox-item-vt1,
+.flexbox-item-com1 {
     display: flex;
     flex-direction: column;
 }
 
 /* Header Section */
 
-.flexbox-item-2 {
+.flexbox-item-vo2,
+.flexbox-item-vt2,
+.flexbox-item-com1 {
     background-color: rgb(63, 34, 210);
     color: rgb(254, 252, 251);
     text-align: center;
@@ -31,7 +35,7 @@ h4 {
 }
 
 /* Navigation Bar*/
-
+/*.flexbox-item-vo3 is the nav bar stuff*/
 .nav {
     justify-content: center;
     margin-bottom: 10px;
@@ -55,7 +59,7 @@ p {
     padding: 5px;
 }
 
-.flexbox-item-4 {
+.flexbox-item-vo4 {
     border-color: blue;
     border-style: solid;
     border-width: 2px;
@@ -74,7 +78,8 @@ h5 {
 }
 
 /*Title & Image StarTrek*/
-.flexbox-item-5 {
+.flexbox-item-vo5,
+.flexbox-item-vt5 {
     border-color: rgb(63, 34, 210);
     border-style: solid;
     border-width: 5px;
@@ -86,7 +91,8 @@ h4 {
     margin: 20px;
 }
 
-.flexbox-item-6 {
+.flexbox-item-vo6,
+.flexbox-item-vt6 {
     border-color: rgb(63, 34, 210);
     border-style: solid;
     border-width: 5px;
@@ -99,7 +105,11 @@ h4 {
 #btn-1,
 #btn-2,
 #btn-3,
-#btn-4 {
+#btn-4,
+#btn-5,
+#btn-6,
+#btn-7,
+#btn-8 {
     margin: 10px;
     
     }
@@ -133,9 +143,10 @@ h4 {
 }
 /*Display Results*/
 
-.flexbox-item-7 {
+.flexbox-item-vo7,
+.flexbox-item-vt7 {
     display: flex;
-        justify-content: center;
+    justify-content: center;
     border-color: rgb(92, 17, 173);
     border-style: solid;
     border-width: 5px;
@@ -143,7 +154,20 @@ h4 {
     width: 750px;
 }
 
-.flexbox-item-10 {
+/*Compare Page CSS Stuff*/
+
+#middle-box-4 {
+    display: flex;
+    flex-direction: row;
+}
+
+.shipone-display,
+.shiptwo-display {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexbox-item-com10 {
 
     border-color: rgb(60, 10, 153);
     border-style: solid;
@@ -152,12 +176,7 @@ h4 {
     width: 700px;
 }
 
-.shipone-display {
-    display: flex;
-    flex-direction: column;
-}
-
-.flexbox-item-11 {
+.flexbox-item-com11 {
 
     border-color: rgb(11, 233, 11);
     border-style: solid;
@@ -166,12 +185,4 @@ h4 {
     width: 700px;
 }
 
-.shiptwo-display {
-    display: flex;
-    flex-direction: column;
-}
 
-#middle-box-4 {
-    display: flex;
-    flex-direction: row;
-}
