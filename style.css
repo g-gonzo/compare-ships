@@ -24,7 +24,7 @@ body {
 
 .flexbox-item-vo2,
 .flexbox-item-vt2,
-.flexbox-item-com1 {
+.flexbox-item-com2 {
     background-color: rgb(63, 34, 210);
     color: rgb(254, 252, 251);
     text-align: center;
@@ -169,7 +169,7 @@ h4 {
 
 .flexbox-item-com10 {
 
-    border-color: rgb(60, 10, 153);
+    border-color: rgb(208, 205, 214);
     border-style: solid;
     border-width: 5px;
     height: 1700px;
@@ -178,7 +178,7 @@ h4 {
 
 .flexbox-item-com11 {
 
-    border-color: rgb(11, 233, 11);
+    border-color: rgb(208, 205, 214);
     border-style: solid;
     border-width: 5px;
     height: 1700px;
