@@ -1,5 +1,34 @@
 [
     {
+        "Id": 0,
+        "Genre": "test",
+        "Name": "test",
+        "Class": "test",
+        "Model": "test",
+        "Role": "test",
+        "Length": 0,
+        "Width": 0,
+        "Height": 0,
+        "Displacement": 0,
+        "Atmosphere": 0,
+        "Maxspeed": 0,
+        "Agility": 0,
+        "Engines": 0,
+        "Thrusters": 0,
+        "ShieldsTotal": 0,
+        "ShieldsRating": 0,
+        "Lasers": 0,
+        "Cannons": 0,
+        "Launchers": 0,
+        "Grapplers": 0,
+        "Officers": 0,
+        "Enlisted": 0,
+        "Passengers": 0,
+        "Tour": 0,
+        "Image": "./images/blankOne.png",
+        "Discription": "oiahgp9hoshnugyuofvioc"
+    },
+    {
         "Id": 1,
         "Genre": "StarFleet",
         "Name": "Valkyrie",
@@ -17,7 +46,7 @@
         "Thrusters": 8,
         "ShieldsTotal": 2,
         "ShieldsRating": 10,
-        "Lasers": 36,
+        "Lasers": 18,
         "Cannons": 0,
         "Launchers": 3,
         "Grapplers": 0,
@@ -25,8 +54,8 @@
         "Enlisted": 435,
         "Passengers": 100,
         "Tour": 3650,
-        "Image": "./images/const.jpg",
-        "Discription": ""
+        "Image": "./images/valkyrie.png",
+        "Discription": "U.S.S Valkyrie - Constellation Class Exploratory Cruiser - "
     },
     {
         "Id": 2,
@@ -54,8 +83,8 @@
         "Enlisted": 450,
         "Passengers": 50,
         "Tour": 1825,
-        "Image": "./images/sputnik.jpg",
-        "Discription": ""
+        "Image": "./images/lexington.png",
+        "Discription": "U.S.S Lexington - Excelsior Class Heavy Cruiser -"
     },
     {
         "Id": 3,
@@ -83,8 +112,8 @@
         "Enlisted": 585,
         "Passengers": 500,
         "Tour": 1825,
-        "Image": "./images/sputnik.jpg",
-        "Discription": ""
+        "Image": "./images/highlander.png",
+        "Discription": "U.S.S Highlander - Ambassador Class Heavy Cruiser -"
     },
     {
         "Id": 4,
@@ -112,8 +141,8 @@
         "Enlisted": 400,
         "Passengers": 500,
         "Tour": 1825,
-        "Image": "./images/needpic.png",
-        "Discription": ""
+        "Image": "./images/merrimac.png",
+        "Discription": "U.S.S Merrimac - Nebula Class Light Cruiser - "
     },
     {
         "Id": 5,
@@ -141,8 +170,8 @@
         "Enlisted": 310,
         "Passengers": 300,
         "Tour": 1825,
-        "Image": "./images/needpic.png",
-        "Discription": ""
+        "Image": "./images/princeton.png",
+        "Discription": "U.S.S Princeton - Niagara Class Fast Cruiser -"
     },
     {
         "Id": 6,
@@ -170,8 +199,8 @@
         "Enlisted": 525,
         "Passengers": 5000,
         "Tour": 1825,
-        "Image": "./images/needpic.png",
-        "Discription": ""
+        "Image": "./images/odyssey.png",
+        "Discription": "U.S.S Odyssey - Galaxy Class Large Exploratory Cruiser -"
     },
     {
         "Id": 7,
@@ -199,8 +228,8 @@
         "Enlisted": 250,
         "Passengers": 100,
         "Tour": 1825,
-        "Image": "./images/needpic.png",
-        "Discription": ""
+        "Image": "./images/armstrong.png",
+        "Discription": "U.S.S Armstrong - Challenger Class Light Cruiser -"
     },
     {
         "Id": 8,
@@ -228,8 +257,8 @@
         "Enlisted": 400,
         "Passengers": 50,
         "Tour": 1825,
-        "Image": "./images/needpic.png",
-        "Discription": ""
+        "Image": "./images/akira.png",
+        "Discription": "U.S.S Dominion - Akira Class Battle Cruiser -"
     },
     {
         "Id": 9,
@@ -257,8 +286,8 @@
         "Enlisted": 400,
         "Passengers": 50,
         "Tour": 1825,
-        "Image": "./images/needpic.png",
-        "Discription": ""
+        "Image": "./images/galaxyii.webp",
+        "Discription": "U.S.S Bright Star - Galaxy II Class Large Exploratory Cruiser -"
     },
     {
         "Id": 10,
@@ -286,8 +315,8 @@
         "Enlisted": 100,
         "Passengers": 50,
         "Tour": 1825,
-        "Image": "./images/sputnik.jpg",
-        "Discription": ""
+        "Image": "./images/voyager.png",
+        "Discription": "U.S.S Voyager - Intrepid Class Cruiser -"
     },
     {
         "Id": 11,
@@ -316,7 +345,7 @@
         "Passengers": 12000,
         "Tour": 1825,
         "Image": "./images/enterprise.webp",
-        "Discription": ""
+        "Discription": "U.S.S Enterprise E - Sovereign Class Heavy Cruiser -"
     },
     {
         "Id": 12,
@@ -344,8 +373,8 @@
         "Enlisted": 100,
         "Passengers": 50,
         "Tour": 365,
-        "Image": "./images/sputnik.jpg",
-        "Discription": ""
+        "Image": "./images/prometheus.png",
+        "Discription": "U.S.S Prometheus - Prometheus Class Tactical Cruiser -"
     },
     {
         "Id": 13,
@@ -373,8 +402,8 @@
         "Enlisted": 473,
         "Passengers": 500,
         "Tour": 5475,
-        "Image": "./images/sputnik.jpg",
-        "Discription": ""
+        "Image": "./images/ernstruska.png",
+        "Discription": "U.S.S Ernst Ruska - Nottingham Class Exploratory Cruiser -"
     },
     {
         "Id": 14,
@@ -402,8 +431,8 @@
         "Enlisted": 575,
         "Passengers": 1500,
         "Tour": 1825,
-        "Image": "./images/veng.webp",
-        "Discription": ""
+        "Image": "./images/vengence.webp",
+        "Discription": "U.S.S Vengence - Entente Class Dreadnought -"
     },
     {
         "Id": 15,
@@ -432,7 +461,7 @@
         "Passengers": 400,
         "Tour": 1825,
         "Image": "./images/norway.webp",
-        "Discription": ""
+        "Discription": "U.S.S Oslo - Norway Class Frigate -"
     },
     {
         "Id": 16,
@@ -460,8 +489,8 @@
         "Enlisted": 300,
         "Passengers": 45,
         "Tour": 1825,
-        "Image": "./images/sull.png",
-        "Discription": ""
+        "Image": "./images/sullivan.png",
+        "Discription": "U.S.S Tsunami - Sullivans Class Tactical Frigate -"
     },
     {
         "Id": 17,
@@ -489,8 +518,8 @@
         "Enlisted": 250,
         "Passengers": 100,
         "Tour": 1825,
-        "Image": "./images/freedom.jpg",
-        "Discription": ""
+        "Image": "./images/concorde.png",
+        "Discription": "U.S.S Concorde - Freedom Class Destroyer -"
     },
     {
         "Id": 18,
@@ -518,8 +547,8 @@
         "Enlisted": 500,
         "Passengers": 100,
         "Tour": 1825,
-        "Image": "./images/steamrun.jpg",
-        "Discription": ""
+        "Image": "./images/ararat.png",
+        "Discription": "U.S.S Ararat - Steamrunner Class Heavy Destroyer -"
     },
     {
         "Id": 19,
@@ -548,7 +577,7 @@
         "Passengers": 600,
         "Tour": 365,
         "Image": "./images/CR90.webp",
-        "Discription": ""
+        "Discription": "CR90 - Blockade Runner - Corvette"
     },
     {
         "Id": 20,
@@ -577,7 +606,7 @@
         "Passengers": 9700,
         "Tour": 730,
         "Image": "./images/ISD1.webp",
-        "Discription": ""
+        "Discription": "ISD - Imperial I - Star Destroyer"
     },
     {
         "Id": 21,
@@ -606,7 +635,7 @@
         "Passengers": 2000,
         "Tour": 730,
         "Image": "./images/venator.webp",
-        "Discription": ""
+        "Discription": "Venator - Star Cruiser - Attack Cruiser"
     },
     {
         "Id": 22,
@@ -635,7 +664,7 @@
         "Passengers": 9700,
         "Tour": 730,
         "Image": "./images/ISD2.jpg",
-        "Discription": ""
+        "Discription": "IMP (Star Duece) - Imperial II - Star Destroyer"
     },
     {
         "Id": 23,
@@ -664,6 +693,6 @@
         "Passengers": 100,
         "Tour": 1825,
         "Image": "./images/mugato.webp",
-        "Discription": ""
+        "Discription": "U.S.S Geranimo - Mugato Class Corvette -"
     }
 ]
