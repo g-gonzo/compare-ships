@@ -18,7 +18,7 @@
 
     <!---Trying to add an Page OnLoad to load information into comparisons-->
     
-    <body onload="UpdateCompare1()">
+    <body onload="PopulateComparePage()">
     <div class="flexbox-item flexbox-item-com1" id="main-container">
         <!--Begining of Main Container-->
         <!--Header Section-->
@@ -49,10 +49,6 @@
                 </ul>
             </div>
         </div>
-
-                <button type="button" class="cresults" id="cresults" onclick="UpdateCompare1(), UpdateCompare2()">Click here to load
-                    comparison
-                    results!</button>
 
         <!--This is the middle container holding the two Tiles-->
         <div class="flexbox-item flexbox-item-com9" id="middle-container">
@@ -105,13 +101,10 @@
                         </ul>
                         <h4>Speed:</h4>
                         <ul class="list-group list-group-horizontal">
-                            <li class="list-group-item flex-fill">Atmosphere (kmph):</li>
+                            <li class="list-group-item flex-fill">Ship Speeds (kmph):</li>
                             <li id="vo11" class="list-group-item flex-fill">Data Results...</li>
                         </ul>
-                        <ul class="list-group list-group-horizontal-sm">
-                            <li class="list-group-item flex-fill">Maximum (warp):</li>
-                            <li id="vo12" class="list-group-item flex-fill">Data Results...</li>
-                        </ul>
+
                         <ul class="list-group list-group-horizontal-md">
                             <li class="list-group-item flex-fill">Agility:</li>
                             <li id="vo13" class="list-group-item flex-fill">Data Results...</li>
@@ -121,36 +114,19 @@
                             <li class="list-group-item flex-fill">Engines:</li>
                             <li id="vo14" class="list-group-item flex-fill">Data Results...</li>
                         </ul>
-                        <ul class="list-group list-group-horizontal-sm">
-                            <li class="list-group-item flex-fill">Thrusters:</li>
-                            <li id="vo15" class="list-group-item flex-fill">Data Results...</li>
-                        </ul>
+
                         <h4>Shield:</h4>
                         <ul class="list-group list-group-horizontal">
-                            <li class="list-group-item flex-fill">Shields (total):</li>
+                            <li class="list-group-item flex-fill">Shields:</li>
                             <li id="vo16" class="list-group-item flex-fill">Data Results...</li>
                         </ul>
-                        <ul class="list-group list-group-horizontal-sm">
-                            <li class="list-group-item flex-fill">Shields (rating):</li>
-                            <li id="vo17" class="list-group-item flex-fill">Data Results...</li>
-                        </ul>
+
                         <h4>Defenses:</h4>
                         <ul class="list-group list-group-horizontal">
-                            <li class="list-group-item flex-fill">Lasers (beam type):</li>
+                            <li class="list-group-item flex-fill">Weapons:</li>
                             <li id="vo18" class="list-group-item flex-fill">Data Results...</li>
                         </ul>
-                        <ul class="list-group list-group-horizontal-sm">
-                            <li class="list-group-item flex-fill">Cannons (pulse type):</li>
-                            <li id="vo19" class="list-group-item flex-fill">Data Results...</li>
-                        </ul>
-                        <ul class="list-group list-group-horizontal-md">
-                            <li class="list-group-item flex-fill">Launchers (torp/missle):</li>
-                            <li id="vo20" class="list-group-item flex-fill">Data Results...</li>
-                        </ul>
-                        <ul class="list-group list-group-horizontal-lg">
-                            <li class="list-group-item flex-fill">Grapplers (tractor beam):</li>
-                            <li id="vo21" class="list-group-item flex-fill">Data Results...</li>
-                        </ul>
+
                         <h4>Crew:</h4>
                         <ul class="list-group list-group-horizontal">
                             <li class="list-group-item flex-fill">Officers:</li>
@@ -167,6 +143,10 @@
                         <ul class="list-group list-group-horizontal-lg">
                             <li class="list-group-item flex-fill">Tour Length:</li>
                             <li id="vo25" class="list-group-item flex-fill">Data Results...</li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal-sm">
+                            <li class="list-group-item flex-fill">Utility Craft:</li>
+                            <li id="vo26" class="list-group-item flex-fill">Data Results...</li>
                         </ul>
                     </div>
                 </div>
@@ -218,13 +198,10 @@
                         </ul>
                         <h4>Speed:</h4>
                         <ul class="list-group list-group-horizontal">
-                            <li class="list-group-item flex-fill">Atmosphere (kmph):</li>
+                            <li class="list-group-item flex-fill">Ship Speeds (kmph):</li>
                             <li id="vt11" class="list-group-item flex-fill">Data Results...</li>
                         </ul>
-                        <ul class="list-group list-group-horizontal-sm">
-                            <li class="list-group-item flex-fill">Maximum (warp):</li>
-                            <li id="vt12" class="list-group-item flex-fill">Data Results...</li>
-                        </ul>
+
                         <ul class="list-group list-group-horizontal-md">
                             <li class="list-group-item flex-fill">Agility:</li>
                             <li id="vt13" class="list-group-item flex-fill">Data Results...</li>
@@ -234,36 +211,19 @@
                             <li class="list-group-item flex-fill">Engines:</li>
                             <li id="vt14" class="list-group-item flex-fill">Data Results...</li>
                         </ul>
-                        <ul class="list-group list-group-horizontal-sm">
-                            <li class="list-group-item flex-fill">Thrusters:</li>
-                            <li id="vt15" class=" list-group-item flex-fill">Data Results...</li>
-                        </ul>
+
                         <h4>Shield:</h4>
                         <ul class="list-group list-group-horizontal">
-                            <li class="list-group-item flex-fill">Shields (total):</li>
+                            <li class="list-group-item flex-fill">Shields:</li>
                             <li id="vt16" class="list-group-item flex-fill">Data Results...</li>
                         </ul>
-                        <ul class="list-group list-group-horizontal-sm">
-                            <li class="list-group-item flex-fill">Shields (rating):</li>
-                            <li id="vt17" class="list-group-item flex-fill">Data Results...</li>
-                        </ul>
+
                         <h4>Defenses:</h4>
                         <ul class="list-group list-group-horizontal">
-                            <li class="list-group-item flex-fill">Lasers (beam type):</li>
+                            <li class="list-group-item flex-fill">Weapons:</li>
                             <li id="vt18" class="list-group-item flex-fill">Data Results...</li>
                         </ul>
-                        <ul class="list-group list-group-horizontal-sm">
-                            <li class="list-group-item flex-fill">Cannons (pulse type):</li>
-                            <li id="vt19" class="list-group-item flex-fill">Data Results...</li>
-                        </ul>
-                        <ul class="list-group list-group-horizontal-md">
-                            <li class="list-group-item flex-fill">Launchers (torp/missle):</li>
-                            <li id="vt20" class="list-group-item flex-fill">Data Results...</li>
-                        </ul>
-                        <ul class="list-group list-group-horizontal-lg">
-                            <li class="list-group-item flex-fill">Grapplers (tractor beam):</li>
-                            <li id="vt21" class="list-group-item flex-fill">Data Results...</li>
-                        </ul>
+
                         <h4>Crew:</h4>
                         <ul class="list-group list-group-horizontal">
                             <li class="list-group-item flex-fill">Officers:</li>
@@ -280,6 +240,10 @@
                         <ul class="list-group list-group-horizontal-lg">
                             <li class="list-group-item flex-fill">Tour Length:</li>
                             <li id="vt25" class="list-group-item flex-fill">Data Results...</li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal-sm">
+                            <li class="list-group-item flex-fill">Utility Craft:</li>
+                            <li id="vt26" class="list-group-item flex-fill">Data Results...</li>
                         </ul>
                     </div>
                 </div>

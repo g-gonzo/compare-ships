@@ -11,14 +11,22 @@ let btn4 = document.getElementById("btn-4");
 let test = document.getElementById("cresults");  // Now button that loads comparison data...
 
 // Object - allShips used to gather ship objects from JSON...
-let allShips =
+let allShips;
+
+
+function LoadShips() {
+    allShips =
     fetch("Ships.json")
         .then(function (response) {
             return response.json();
         })
         .then(function (Ships) {
             allShips = Ships;
-        })
+        });
+    return Promise.resolve(allShips);
+
+}
+
 
 
 // Function - Used to select the Star Trek Genre ...
@@ -26,7 +34,7 @@ function SelectStarTrek() {
     let placeholder = document.querySelector("#data-output");
     let out = "";
     for (let ship of allShips) {
-        if (ship.Genre === "StarFleet") {
+        if (ship.Genre === "Federation StarFleet") {
             out +=
                 `<tr>
                 <td><input type="radio" name="ship" value=${JSON.stringify(ship.Id)} onClick=UpdateViewer(${ship.Id}) /></td>
@@ -46,7 +54,7 @@ function SelectStarWars() {
     let placeholder = document.querySelector("#data-output");
     let out = "";
     for (let ship of allShips) {
-        if (ship.Genre === "StarWars") {
+        if (ship.Genre === "Republic" || ship.Genre === "Imperial") {
             out +=
                 `<tr>
                 <td><input type="radio" name="ship" value=${JSON.stringify(ship.Id)} onClick=UpdateViewer(${ship.Id}) /></td>
@@ -176,8 +184,26 @@ function SelectSupportCraft() {
 }
 
 function SelectSmallShips() {
-    console.log("Selecting Small Ships !!!");
+    let placeholder = document.querySelector("#data-output");
+    let out = "";
+    let ship = allShips.sort((a, b) => parseFloat(a.Displacement) - parseFloat(b.Displacement))
+    for (let ship of allShips) {
+        if (ship.Displacement !== 0) {
+            out +=
+                `<tr>
+                <td><input type="radio" name="ship" value=${JSON.stringify(ship.Id)} onClick=UpdateViewer(${ship.Id}) /></td>
+                <td>${JSON.stringify(ship.Id)}</td>
+                <td>${JSON.stringify(ship.Name)}</td>
+                <td>${JSON.stringify(ship.Model)}</td>
+                <td>${JSON.stringify(ship.Genre)}</td>
+                </tr>
+                `;
+        }
+        console.log(ship.Displacement)
+        placeholder.innerHTML = out;
+    }
 }
+
 
 function SelectLargeShips() {
     console.log("Selecting large Ships !!!");
@@ -211,6 +237,7 @@ function SearchForShips() {
 
 // Function - Used to set the both Views1 & View2 ...
 function SetView() {
+    console.log("Hit set view");
     if (document.title === "SVS-Home") {
         let ship1 = sessionStorage.getItem("SVS-Home");
         ship1 = allShips[ship1];
@@ -264,76 +291,62 @@ function RefreshViewer() {
 
 // Function - Used to update the Compare Page's List #1 ...
 function UpdateCompare1() {
-    ship1 = sessionStorage.getItem("ShipOne");
-    ship1 = allShips[ship1];
+    var ShipOneId = sessionStorage.getItem("ShipOne");
+    ship1 = allShips[ShipOneId];
     document.querySelector("#vo1").innerHTML = ship1.Id;
     document.querySelector("#vo2").innerHTML = ship1.Name;
     document.querySelector("#vo3").innerHTML = ship1.Model;
     document.querySelector("#vo4").innerHTML = ship1.Class;
     document.querySelector("#vo5").innerHTML = ship1.Role;
     document.querySelector("#vo6").innerHTML = ship1.Genre;
-    document.querySelector("#vo7").innerHTML = `${ship1.Length}  Meters`;
-    document.querySelector("#vo8").innerHTML = `${ship1.Width}  Meters`;
-    document.querySelector("#vo9").innerHTML = `${ship1.Height}  Meters`;
-    document.querySelector("#vo10").innerHTML = `${ship1.Displacement}  Metric Tons`;
-    document.querySelector("#vo11").innerHTML = ship1.Atmosphere;
-    document.querySelector("#vo12").innerHTML = ship1.Maxspeed;
+    document.querySelector("#vo7").innerHTML = ship1.Length;
+    document.querySelector("#vo8").innerHTML = ship1.Width;
+    document.querySelector("#vo9").innerHTML = ship1.Height;
+    document.querySelector("#vo10").innerHTML = ship1.Displacement;
+    document.querySelector("#vo11").innerHTML = ship1.Speed;
     document.querySelector("#vo13").innerHTML = ship1.Agility;
     document.querySelector("#vo14").innerHTML = ship1.Engines;
-    document.querySelector("#vo15").innerHTML = ship1.Thrusters;
-    document.querySelector("#vo16").innerHTML = ship1.ShieldsTotal;
-    document.querySelector("#vo17").innerHTML = ship1.ShieldsRating;
-    document.querySelector("#vo18").innerHTML = ship1.Lasers;
-    document.querySelector("#vo19").innerHTML = ship1.Cannons;
-    document.querySelector("#vo20").innerHTML = ship1.Launchers;
-    document.querySelector("#vo21").innerHTML = ship1.Grapplers;
+    document.querySelector("#vo16").innerHTML = ship1.Shields;
+    document.querySelector("#vo18").innerHTML = ship1.Armament;
     document.querySelector("#vo22").innerHTML = ship1.Officers;
     document.querySelector("#vo23").innerHTML = ship1.Enlisted;
     document.querySelector("#vo24").innerHTML = ship1.Passengers;
-    document.querySelector("#vo25").innerHTML = `${ship1.Tour}  Days`;
-    console.log(typeof (ship1));
+    document.querySelector("#vo25").innerHTML = ship1.Tour;
+    document.querySelector("#vo26").innerHTML = ship1.EmbarkCraft;
 }
 
 // Function - Used to update the Compare Page's List #2 ...
 function UpdateCompare2() {
-    ship2 = sessionStorage.getItem("ShipTwo");
-    ship2 = allShips[ship2];
+    var ShipTwoId = sessionStorage.getItem("ShipTwo");
+    ship2 = allShips[ShipTwoId];
     document.querySelector("#vt1").innerHTML = ship2.Id;
     document.querySelector("#vt2").innerHTML = ship2.Name;
     document.querySelector("#vt3").innerHTML = ship2.Model;
     document.querySelector("#vt4").innerHTML = ship2.Class;
     document.querySelector("#vt5").innerHTML = ship2.Role;
     document.querySelector("#vt6").innerHTML = ship2.Genre;
-    document.querySelector("#vt7").innerHTML = `${ship2.Length}  Meters`;
-    document.querySelector("#vt8").innerHTML = `${ship2.Width}  Meters`;
-    document.querySelector("#vt9").innerHTML = `${ship2.Height}  Meters`;
-    document.querySelector("#vt10").innerHTML = `${ship2.Displacement}  Metric Tons`;
-    document.querySelector("#vt11").innerHTML = ship2.Atmosphere;
-    document.querySelector("#vt12").innerHTML = ship2.Maxspeed;
+    document.querySelector("#vt7").innerHTML = ship2.Length;
+    document.querySelector("#vt8").innerHTML = ship2.Width;
+    document.querySelector("#vt9").innerHTML = ship2.Height;
+    document.querySelector("#vt10").innerHTML = ship2.Displacement;
+    document.querySelector("#vt11").innerHTML = ship2.Speed;
     document.querySelector("#vt13").innerHTML = ship2.Agility;
     document.querySelector("#vt14").innerHTML = ship2.Engines;
-    document.querySelector("#vt15").innerHTML = ship2.Thrusters;
-    document.querySelector("#vt16").innerHTML = ship2.ShieldsTotal;
-    document.querySelector("#vt17").innerHTML = ship2.ShieldsRating;
-    document.querySelector("#vt18").innerHTML = ship2.Lasers;
-    document.querySelector("#vt19").innerHTML = ship2.Cannons;
-    document.querySelector("#vt20").innerHTML = ship2.Launchers;
-    document.querySelector("#vt21").innerHTML = ship2.Grapplers;
+    document.querySelector("#vt16").innerHTML = ship2.Shields;
+    document.querySelector("#vt18").innerHTML = ship2.Armament;
     document.querySelector("#vt22").innerHTML = ship2.Officers;
     document.querySelector("#vt23").innerHTML = ship2.Enlisted;
     document.querySelector("#vt24").innerHTML = ship2.Passengers;
-    document.querySelector("#vt25").innerHTML = `${ship2.Tour}  Days`;
-    console.log(ship2);
+    document.querySelector("#vt25").innerHTML = ship2.Tour;
+    document.querySelector("#vt26").innerHTML = ship2.EmbarkCraft;
 }
 
 // Button Listener - Submit
-Submit?.addEventListener('click', function () {
-    SetView();
-});
+
 
 // Function - Button Listeners...
 function addViewEventListerners() {
-    if (document.title !== "SVS-ComparePage") return;
+    if (document.title === "SVS-ComparePage") return;
     btn1?.addEventListener('click', function () {
         console.log("Button 1 has been clicked");
     });
@@ -354,5 +367,14 @@ function addViewEventListerners() {
         UpdateCompare2();
     });
 
+    Submit?.addEventListener('click', function () {
+        SetView();
+    });
+
+
 }
+function PopulateComparePage() {
+    LoadShips().then((_) => { UpdateCompare1(); UpdateCompare2(); });
+}
+
 addViewEventListerners();
