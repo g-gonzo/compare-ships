@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="RefreshViewer()">
+<body onload="LoadShips(); RefreshViewer()">
   <div class="flexbox-item flexbox-item-vo1" id="main-container">
     <!--Begining of Main Container-->
     <!--Header Section-->
@@ -122,7 +122,7 @@
                 <li><a class="dropdown-item" onclick="SelectSlowShips()" href="#">Slowest</a></li>
               </ul>
             </div>
-            <button type="submit" class="v1Submit" id="submit">Submit</button>
+            <button class="v1Submit" id="submit">Submit</button>
           </div>
         </div>
 
