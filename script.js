@@ -186,8 +186,12 @@ function SelectSupportCraft() {
 function SelectSmallShips() {
     let placeholder = document.querySelector("#data-output");
     let out = "";
-    let ship = allShips.sort((a, b) => parseFloat(a.Displacement) - parseFloat(b.Displacement))
-    for (let ship of allShips) {
+    let smallShips = allShips.sort((a, b) => {
+        if (a.Displacement > b.Displacement) return 1;
+        if (a.Displacement < b.Displacement) return -1;
+        return 0;
+    })
+    for (let ship of smallShips) {
         if (ship.Displacement !== 0) {
             out +=
                 `<tr>
@@ -198,23 +202,86 @@ function SelectSmallShips() {
                 <td>${JSON.stringify(ship.Genre)}</td>
                 </tr>
                 `;
+            console.log(ship.Name, ship.Displacement);
         }
-        console.log(ship.Displacement)
-        placeholder.innerHTML = out;
     }
+    placeholder.innerHTML = out;
 }
 
 
 function SelectLargeShips() {
-    console.log("Selecting large Ships !!!");
+    let placeholder = document.querySelector("#data-output");
+    let out = "";
+    let largeShips = allShips.sort((a, b) => {
+        if (a.Displacement < b.Displacement) return 1;
+        if (a.Displacement > b.Displacement) return -1;
+        return 0;
+    })
+    for (let ship of largeShips) {
+        if (ship.Displacement !== 0) {
+            out +=
+                `<tr>
+                <td><input type="radio" name="ship" value=${JSON.stringify(ship.Id)} onClick=UpdateViewer(${ship.Id}) /></td>
+                <td>${JSON.stringify(ship.Id)}</td>
+                <td>${JSON.stringify(ship.Name)}</td>
+                <td>${JSON.stringify(ship.Model)}</td>
+                <td>${JSON.stringify(ship.Genre)}</td>
+                </tr>
+                `;
+            console.log(ship.Name, ship.Displacement);
+        }
+    }
+    placeholder.innerHTML = out;
 }
 
 function SelectSlowShips() {
-    console.log("Selecting Slow Ships !!!");
+    let placeholder = document.querySelector("#data-output");
+    let out = "";
+    let smallShips = allShips.sort((a, b) => {
+        if (a.MaxSpeed > b.MaxSpeed) return 1;
+        if (a.MaxSpeed < b.MaxSpeed) return -1;
+        return 0;
+    })
+    for (let ship of smallShips) {
+        if (ship.Displacement !== 0) {
+            out +=
+                `<tr>
+                <td><input type="radio" name="ship" value=${JSON.stringify(ship.Id)} onClick=UpdateViewer(${ship.Id}) /></td>
+                <td>${JSON.stringify(ship.Id)}</td>
+                <td>${JSON.stringify(ship.Name)}</td>
+                <td>${JSON.stringify(ship.Model)}</td>
+                <td>${JSON.stringify(ship.Genre)}</td>
+                </tr>
+                `;
+            console.log(ship.Name, ship.MaxSpeed);
+        }
+    }
+    placeholder.innerHTML = out;
 }
 
 function SelectFastShips() {
-    console.log("Selecting Fast Ships !!!");
+    let placeholder = document.querySelector("#data-output");
+    let out = "";
+    let smallShips = allShips.sort((a, b) => {
+        if (a.MaxSpeed < b.MaxSpeed) return 1;
+        if (a.MaxSpeed > b.MaxSpeed) return -1;
+        return 0;
+    })
+    for (let ship of smallShips) {
+        if (ship.Displacement !== 0) {
+            out +=
+                `<tr>
+                <td><input type="radio" name="ship" value=${JSON.stringify(ship.Id)} onClick=UpdateViewer(${ship.Id}) /></td>
+                <td>${JSON.stringify(ship.Id)}</td>
+                <td>${JSON.stringify(ship.Name)}</td>
+                <td>${JSON.stringify(ship.Model)}</td>
+                <td>${JSON.stringify(ship.Genre)}</td>
+                </tr>
+                `;
+            console.log(ship.Name, ship.MaxSpeed);
+        }
+    }
+    placeholder.innerHTML = out;
 }
 
 function SearchForShips() {
@@ -237,62 +304,33 @@ function SearchForShips() {
 
 // Function - Used to set the both Views1 & View2 ...
 function SetView() {
-    console.log("Hit set view");
-    if (document.title === "SVS-Home") {
-        let ship1 = sessionStorage.getItem("SVS-Home");
-        ship1 = allShips[ship1];
-        let pic1 = ship1.Image;
-        document.getElementById("view").src = pic1;
-        sessionStorage.setItem("pic1", ship1.Image);
-        let desc1 = ship1.Description;
-        document.getElementById("A").innerHTML = desc1;
-        sessionStorage.setItem("desc1", ship1.Description);
-        let shipOne = ship1.Id;
-        sessionStorage.setItem("ShipOne", shipOne);
-        return shipOne;
-    } else {
-        let ship2 = sessionStorage.getItem("SVS-View2");
-        ship2 = allShips[ship2];
-        let pic2 = ship2.Image;
-        document.getElementById("view").src = pic2;
-        sessionStorage.setItem("pic2", ship2.Image);
-        let desc2 = ship2.Description;
-        document.getElementById("A").innerHTML = desc2;
-        sessionStorage.setItem("desc2", ship2.Description);
-        let shipTwo = ship2.Id;
-        sessionStorage.setItem("ShipTwo", shipTwo);
-        return shipTwo;
-    }
-
+    console.log("SetView Method Fired!");
+    let shipId = parseInt(Submit.getAttribute("value"));
+    let ship = allShips.find(s => s.Id === shipId);
+    document.getElementById("A").innerHTML = ship.Description;
+    document.getElementById("view").src = ship.Image;
+    sessionStorage.setItem(document.title, shipId);
+    return ship;
 }
 
 // Function- Used to update the viewer when radio button is selelcted...
 function UpdateViewer(Id) {
-    let picture = allShips[Id].Image;
-    let descriptor = allShips[Id].Description;
+    Submit.setAttribute("value", Id);
+    let ship = allShips.find(s => s.Id === Id);
+    let picture = ship.Image;
+    console.log("UpDateViewer Method Fired!");
+    console.log(ship)
+    let descriptor = ship.Description;
     let txtdisplay = document.getElementById("A");
     document.getElementById("view").src = picture;
     txtdisplay.innerHTML = descriptor;
-    sessionStorage.setItem(document.title, Id);
 }
 
-// Function - Used to udate the viewers on page load, once a ship is submitted...
-function RefreshViewer() {
-    if (document.title === "SVS-Home" && sessionStorage.getItem("ShipOne") > 0) {
-        let txtdisplay = document.getElementById("A");
-        document.getElementById("view").src = sessionStorage.getItem("pic1");
-        txtdisplay.innerHTML = sessionStorage.getItem("desc1");
-    } else if (document.title === "SVS-View2" && sessionStorage.getItem("ShipTwo") > 0) {
-        let txtdisplay = document.getElementById("A");
-        document.getElementById("view").src = sessionStorage.getItem("pic2");
-        txtdisplay.innerHTML = sessionStorage.getItem("desc2");
-    }
-}
 
 // Function - Used to update the Compare Page's List #1 ...
 function UpdateCompare1() {
-    var ShipOneId = sessionStorage.getItem("ShipOne");
-    ship1 = allShips[ShipOneId];
+    var ShipOne = parseInt(sessionStorage.getItem("SVS-Home"));
+    ship1 = allShips[ShipOne];
     document.querySelector("#vo1").innerHTML = ship1.Id;
     document.querySelector("#vo2").innerHTML = ship1.Name;
     document.querySelector("#vo3").innerHTML = ship1.Model;
@@ -302,7 +340,7 @@ function UpdateCompare1() {
     document.querySelector("#vo7").innerHTML = ship1.Length;
     document.querySelector("#vo8").innerHTML = ship1.Width;
     document.querySelector("#vo9").innerHTML = ship1.Height;
-    document.querySelector("#vo10").innerHTML = ship1.Displacement;
+    document.querySelector("#vo10").innerHTML = ship1.Displacement + " " + "Metric-Tons";
     document.querySelector("#vo11").innerHTML = ship1.Speed;
     document.querySelector("#vo13").innerHTML = ship1.Agility;
     document.querySelector("#vo14").innerHTML = ship1.Engines;
@@ -317,8 +355,8 @@ function UpdateCompare1() {
 
 // Function - Used to update the Compare Page's List #2 ...
 function UpdateCompare2() {
-    var ShipTwoId = sessionStorage.getItem("ShipTwo");
-    ship2 = allShips[ShipTwoId];
+    var ShipTwo = parseInt(sessionStorage.getItem("SVS-View2"));
+    ship2 = allShips[ShipTwo];
     document.querySelector("#vt1").innerHTML = ship2.Id;
     document.querySelector("#vt2").innerHTML = ship2.Name;
     document.querySelector("#vt3").innerHTML = ship2.Model;
@@ -328,7 +366,7 @@ function UpdateCompare2() {
     document.querySelector("#vt7").innerHTML = ship2.Length;
     document.querySelector("#vt8").innerHTML = ship2.Width;
     document.querySelector("#vt9").innerHTML = ship2.Height;
-    document.querySelector("#vt10").innerHTML = ship2.Displacement;
+    document.querySelector("#vt10").innerHTML = ship2.Displacement + " " + "Metric-Tons";
     document.querySelector("#vt11").innerHTML = ship2.Speed;
     document.querySelector("#vt13").innerHTML = ship2.Agility;
     document.querySelector("#vt14").innerHTML = ship2.Engines;
@@ -348,7 +386,7 @@ function UpdateCompare2() {
 function addViewEventListerners() {
     if (document.title === "SVS-ComparePage") return;
     btn1?.addEventListener('click', function () {
-        console.log("Button 1 has been clicked");
+
     });
     btn2?.addEventListener('click', function () {
         console.log("Button 2 has been clicked");
