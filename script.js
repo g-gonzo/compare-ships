@@ -15,15 +15,14 @@ let allShips;
 
 
 function LoadShips() {
-    allShips =
-    fetch("Ships.json")
+
+    return fetch("Ships.json")
         .then(function (response) {
             return response.json();
         })
         .then(function (Ships) {
             allShips = Ships;
         });
-    return Promise.resolve(allShips);
 
 }
 
@@ -330,7 +329,7 @@ function UpdateViewer(Id) {
 // Function - Used to update the Compare Page's List #1 ...
 function UpdateCompare1() {
     var ShipOne = parseInt(sessionStorage.getItem("SVS-Home"));
-    ship1 = allShips[ShipOne];
+    ship1 = allShips.find(s => s.Id === ShipOne);
     document.querySelector("#vo1").innerHTML = ship1.Id;
     document.querySelector("#vo2").innerHTML = ship1.Name;
     document.querySelector("#vo3").innerHTML = ship1.Model;
@@ -356,7 +355,7 @@ function UpdateCompare1() {
 // Function - Used to update the Compare Page's List #2 ...
 function UpdateCompare2() {
     var ShipTwo = parseInt(sessionStorage.getItem("SVS-View2"));
-    ship2 = allShips[ShipTwo];
+    ship2 = allShips.find(s => s.Id === ShipTwo);
     document.querySelector("#vt1").innerHTML = ship2.Id;
     document.querySelector("#vt2").innerHTML = ship2.Name;
     document.querySelector("#vt3").innerHTML = ship2.Model;
