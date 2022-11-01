@@ -6,7 +6,7 @@ Self-contained HTML webpages stored in a folder, along with images, CSS file and
 ## Code style
 HTML 5, CSS, JavaScript, Jason-Server, Lite-Server, Node, Bootstrap.
 ## Screenshots
-TO-DO
+![](images/sfu.png)
 ## Tech/framework used
 (IDE) Used for this project was 'Visual Studio Code'.
 ## How to use?
