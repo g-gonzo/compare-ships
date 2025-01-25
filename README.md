@@ -3,12 +3,10 @@
 A fun project to learn some JavaScript with.
 ## Build status
 Self-contained HTML webpages stored in a folder, along with images, CSS file and JavaScript needed for support. Jason server and lite-server are also installed. 
-## Code style
-HTML 5, CSS, JavaScript, Jason-Server, Lite-Server, Node, Bootstrap.
 ## Screenshots
 ![](images/sfu.png)
 ## Tech/framework used
-(IDE) Used for this project was 'Visual Studio Code'.
+Visual Studio Code, HTML 5, CSS, JavaScript, JSON-Server, Lite-Server, Node, Bootstrap.
 ## How to use?
 This is a HTML application.
 1.	Just download this to you preferred computer location.  
@@ -18,5 +16,6 @@ This is a HTML application.
 ## Credits
 TO-DO
 ## License
-In keeping with GitHub’s preferred practices and recommendations. I have placed this under the provisions and guidelines of MIT License. 
+It probably doesn’t need any kind of licensing, but in keeping with GitHub’s preferred practices and recommendations. I have placed this under the provisions and guidelines of an MIT License. 
 MIT © [Gilbert Gonzales]()
+
