@@ -1,11 +1,11 @@
 # compare-ships
 ## Motivation
-A fun project to learn some JavaScript with.
+A project to experiment with some JavaScript.
 ## Build status
-Self-contained HTML webpages stored in a folder, along with images, CSS file and JavaScript needed for support. Jason server and lite-server are also installed. 
+Self-contained HTML webpages stored in a folder, along with images, CSS file and JavaScript needed for support. JSON server and lite-server are also installed. 
 ## Screenshots
 ![](images/sfu.png)
-## Tech/framework used
+## Tech/Framework
 Visual Studio Code, HTML 5, CSS, JavaScript, JSON-Server, Lite-Server, Node, Bootstrap.
 ## How to use?
 This is a HTML application.
@@ -18,4 +18,5 @@ TO-DO
 ## License
 It probably doesn’t need any kind of licensing, but in keeping with GitHub’s preferred practices and recommendations. I have placed this under the provisions and guidelines of an MIT License. 
 MIT © [Gilbert Gonzales]()
+
 
